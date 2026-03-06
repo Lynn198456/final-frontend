@@ -113,7 +113,7 @@ export default function BookBorrow() {
       return;
     }
 
-    setMessage(`Request status changed to ${requestStatus}.`);
+    setMessage('');
     
     // Refetch borrow requests after status update
     try {
@@ -215,14 +215,22 @@ export default function BookBorrow() {
                           {isAdmin && isInit && (
                             <>
                               <button type='button' onClick={() => updateRequestStatus(entry._id, 'ACCEPTED')}>Accept</button>
-                              <button type='button' className='secondary' onClick={() => updateRequestStatus(entry._id, 'CLOSE-NO-AVAILABLE-BOOK')}>
-                                No Book
-                              </button>
                               <button type='button' className='danger' onClick={() => updateRequestStatus(entry._id, 'CANCEL-ADMIN')}>
                                 Cancel
                               </button>
+                              <button type='button' className='secondary' onClick={() => updateRequestStatus(entry._id, 'CLOSE-NO-AVAILABLE-BOOK')}>
+                                No Book
+                              </button>
                             </>
                           )}
+                          {isAdmin && !isInit && (
+                            <>
+                              <button type='button' disabled>Accept</button>
+                              <button type='button' className='danger' disabled>Cancel</button>
+                              <button type='button' className='secondary' disabled>No Book</button>
+                            </>
+                          )}
+                          {!isAdmin && !isInit && <span className='badge badge-neutral'>Closed</span>}
                         </div>
                       </td>
                     </tr>

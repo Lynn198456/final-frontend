@@ -38,7 +38,7 @@ export default function Login() {
     <main className='login-page'>
       <section className='login-card'>
         <p className='login-badge'>Library Portal</p>
-        <h1>Welcome back</h1>
+        <h1>Welcome</h1>
 
         <form className='login-form' onSubmit={onSubmit}>
           <label htmlFor='email'>Email</label>
@@ -47,7 +47,7 @@ export default function Login() {
             type='email'
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            placeholder='you@example.com'
+            placeholder='Email'
             autoComplete='email'
           />
 
@@ -57,7 +57,7 @@ export default function Login() {
             type='password'
             value={password}
             onChange={(event) => setPassword(event.target.value)}
-            placeholder='Enter your password'
+            placeholder='Password'
             autoComplete='current-password'
           />
 
