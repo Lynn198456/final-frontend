@@ -1,0 +1,118 @@
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 15% 20%, #f1dcc0 0%, rgba(241, 220, 192, 0) 35%),
+    radial-gradient(circle at 85% 10%, #e2c39a 0%, rgba(226, 195, 154, 0) 40%),
+    linear-gradient(135deg, #f3e3cc, #e6cfad 45%, #d9b98e 100%);
+}
+
+.login-card {
+  width: min(100%, 420px);
+  padding: 34px 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(26, 57, 102, 0.12);
+  box-shadow: 0 18px 46px rgba(20, 45, 80, 0.16);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  animation: login-rise 360ms ease-out;
+}
+
+.login-badge {
+  margin: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: #275082;
+}
+
+.login-card h1 {
+  margin: 10px 0 8px;
+  font-size: 34px;
+  line-height: 1.05;
+  color: #0f2440;
+}
+
+.login-subtitle {
+  margin: 0 0 22px;
+  color: #4f6177;
+  font-size: 15px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.login-form label {
+  margin-top: 3px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #183253;
+}
+
+.login-form input {
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #afc6e0;
+  background: #fff;
+  color: #102640;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #2e6fb0;
+  box-shadow: 0 0 0 3px rgba(46, 111, 176, 0.16);
+}
+
+.login-form button {
+  margin-top: 12px;
+  height: 44px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #17457a, #356da7);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.login-form button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.login-error {
+  margin: 6px 0 0;
+  color: #b32525;
+  font-size: 13px;
+}
+
+@keyframes login-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 520px) {
+  .login-card {
+    padding: 26px 20px;
+    border-radius: 16px;
+  }
+
+  .login-card h1 {
+    font-size: 30px;
+  }
+}
